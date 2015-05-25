@@ -43,7 +43,7 @@ def ensure_local_repo(repo_name):
     repo_path_parent = os.path.split(repo_path)[0]
     if not os.path.exists(repo_path_parent):
         os.makedirs(repo_path_parent)
-    repo = git.Repo.clone_from('ssh://{}@{}'.format(constants.GIT_USER, repo_name), repo_path)
+    repo = git.Repo.clone_from('http://{}@{}'.format(constants.GIT_USER, repo_name), repo_path)
 
 def update_local_repo(repo_name):
     """Given a repo name (e.g. github.com/gamechanger/gclib), pull the latest
