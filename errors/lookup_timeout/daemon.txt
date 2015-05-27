@@ -1,0 +1,85 @@
+INFO:root:Received command: up
+INFO:root:Spec Assembler: running...
+INFO:root:Spec Assembler: filtered active bundles to set(['puffin'])
+INFO:root:Spec Assembler: filtered active apps to set(['puffin'])
+INFO:root:Spec Assembler: filtered active libs to set(['gcstatengine', 'gclib'])
+INFO:root:Spec Assembler: filtered active services to set(['coreRedis', 'coreMongo', 'puffinPostgres'])
+INFO:socket_logger:Pulling latest updates for all active managed repos:
+INFO:root:Spec Assembler: running...
+INFO:root:Spec Assembler: filtered active bundles to set(['puffin'])
+INFO:root:Spec Assembler: filtered active apps to set(['puffin'])
+INFO:root:Spec Assembler: filtered active libs to set(['gcstatengine', 'gclib'])
+INFO:root:Spec Assembler: filtered active services to set(['coreRedis', 'coreMongo', 'puffinPostgres'])
+INFO:socket_logger:Compiling together the assembled specs
+INFO:root:Spec Assembler: running...
+INFO:root:Spec Assembler: filtered active bundles to set(['puffin'])
+INFO:root:Spec Assembler: filtered active apps to set(['puffin'])
+INFO:root:Spec Assembler: filtered active libs to set(['gcstatengine', 'gclib'])
+INFO:root:Spec Assembler: filtered active services to set(['coreRedis', 'coreMongo', 'puffinPostgres'])
+INFO:socket_logger:Ensuring virtualbox vm is running
+INFO:root:Initializing boot2docker, this will take a while the first time it runs
+INFO:socket_logger:Virtual machine boot2docker-vm already exists
+INFO:root:Making sure the boot2docker VM is started
+INFO:socket_logger:Waiting for VM and Docker daemon to start...
+INFO:socket_logger:.o
+INFO:socket_logger:Started.
+INFO:socket_logger:Writing /Users/jordansingleton/.boot2docker/certs/boot2docker-vm/ca.pem
+INFO:socket_logger:Writing /Users/jordansingleton/.boot2docker/certs/boot2docker-vm/cert.pem
+INFO:socket_logger:Writing /Users/jordansingleton/.boot2docker/certs/boot2docker-vm/key.pem
+INFO:socket_logger:
+INFO:socket_logger:To connect the Docker client to the Docker daemon, please set:
+INFO:socket_logger:export DOCKER_TLS_VERIFY=1
+INFO:socket_logger:export DOCKER_HOST=tcp://192.168.59.103:2376
+INFO:socket_logger:export DOCKER_CERT_PATH=/Users/jordansingleton/.boot2docker/certs/boot2docker-vm
+INFO:socket_logger:
+INFO:root:Installing rsync inside the Docker VM
+INFO:socket_logger:rsync is already installed!
+INFO:root:Linking /persist to VBox disk (if it is not already linked)
+INFO:root:Checking boot2docker's ip
+INFO:socket_logger:192.168.59.103
+MAYBEIP: 192.168.59.103
+INFO:socket_logger:Compiling the port specs
+INFO:socket_logger:Compiling the nginx config
+INFO:socket_logger:Compiling docker-compose config
+INFO:root:Compose Compiler: Compiling dict for app puffin
+INFO:root:Compose Compiler: compiled command sh -c "cd /gc/gcstatengine && python setup.py develop; cd /gc/gclib && python setup.py develop; cd /gc/puffin; export PATH=$PATH:/gc/puffin; if [ ! -f /var/run/dusty/docker_first_time_started ]; then mkdir -p /var/run/dusty; touch /var/run/dusty/docker_first_time_started; bootstrap-postgres.sh; fi; run_puffin.sh"
+INFO:root:Compose Compiler: links ['coreMongo', 'coreRedis', 'puffinPostgres']
+INFO:root:Compose Compiler: volumes ['/persist/repos/github.com/gamechanger/puffin:/gc/puffin', '/persist/repos/github.com/gamechanger/gcstatengine:/gc/gcstatengine', '/persist/repos/github.com/gamechanger/gclib:/gc/gclib']
+INFO:root:Compose Compiler: ports ['65000:5000']
+INFO:socket_logger:Saving port forwarding to hosts file
+INFO:root:Updating hosts file to match port spec
+INFO:socket_logger:Syncing local repos to the VM
+INFO:root:Syncing repos over rsync
+INFO:socket_logger:Syncing overridden repo github.com/gamechanger/gcstatengine to remote at /persist/repos/github.com/gamechanger/gcstatengine
+Warning: Permanently added '[localhost]:2022' (RSA) to the list of known hosts.
+INFO:socket_logger:Syncing overridden repo github.com/gamechanger/gclib to remote at /persist/repos/github.com/gamechanger/gclib
+Warning: Permanently added '[localhost]:2022' (RSA) to the list of known hosts.
+INFO:socket_logger:Syncing overridden repo github.com/gamechanger/puffin to remote at /persist/repos/github.com/gamechanger/puffin
+Warning: Permanently added '[localhost]:2022' (RSA) to the list of known hosts.
+INFO:socket_logger:Saving nginx config and ensure nginx is running
+INFO:root:Updating nginx with new Dusty config
+INFO:root:Reloading nginx config
+INFO:socket_logger:Saving docker-compose config and starting all containers
+INFO:root:Writing new Composefile
+INFO:root:Running docker-compose up
+Writing /Users/jordansingleton/.boot2docker/certs/boot2docker-vm/ca.pem
+Writing /Users/jordansingleton/.boot2docker/certs/boot2docker-vm/cert.pem
+Writing /Users/jordansingleton/.boot2docker/certs/boot2docker-vm/key.pem
+INFO:socket_logger:Recreating dusty_coreRedis_1...
+INFO:socket_logger:Creating dusty_coreMongo_1...
+INFO:socket_logger:Pulling image mongo:2.6.9...
+INFO:socket_logger:Pulling repository mongo
+INFO:socket_logger:Traceback (most recent call last):
+INFO:socket_logger:File "<string>", line 3, in <module>
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.cli.main", line 31, in main
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.cli.docopt_command", line 21, in sys_dispatch
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.cli.command", line 27, in dispatch
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.cli.docopt_command", line 24, in dispatch
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.cli.command", line 59, in perform_command
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.cli.main", line 464, in up
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.project", line 208, in up
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.service", line 214, in recreate_containers
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.service", line 199, in create_container
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.progress_stream", line 37, in stream_output
+INFO:socket_logger:File "/compose/build/docker-compose/out00-PYZ.pyz/compose.progress_stream", line 50, in print_output_event
+INFO:socket_logger:compose.progress_stream.StreamOutputError: Get https://index.docker.io/v1/repositories/library/mongo/images: dial tcp: lookup index.docker.io on 71.243.0.12:53: read udp 71.243.0.12:53: i/o timeout
