@@ -112,4 +112,8 @@ class Repo(object):
 
         managed_repo = git.Repo(self.managed_path)
         with git_error_handling():
-            managed_repo.remote().pull('master')
+            try:
+                managed_repo.remote().pull('master')
+            except git.exc.GitCommandError as e:
+                log_to_client('Could not update dusty managed remote: {}'.format(managed_repo.remote().url))
+                log_to_client('Failed with error: {}'.format(e))
