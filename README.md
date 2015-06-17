@@ -40,3 +40,4 @@ Before doing anything else make sure you run the command `dusty setup`. This wil
 
 Once setup has been run, use `dusty bundles activate` to activate bundles for your local environment.
 Finally, run `dusty up` to start your local environment.
+dumb
