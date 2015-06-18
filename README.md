@@ -1,4 +1,4 @@
-# dusty
+# dusty!!!
 Docker-based development environment manager
 
 [![Join the Dusty chat](https://dusty-slackin.herokuapp.com/badge.svg)](https://dusty-slackin.herokuapp.com/)
